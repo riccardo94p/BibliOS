@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="993.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LibrarianUserController">
+<children>
+   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="995.0" style="-fx-background-color: #eeeeff;">
+      <children>
+         <Button fx:id="search_but" layoutX="600.0" layoutY="142.0" mnemonicParsing="false" onAction="#searchUs" text="Search">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+         </Button>
+         <MenuButton fx:id="search_filter" layoutX="491.0" layoutY="142.0" mnemonicParsing="false" text="Name">
+            <items>
+               <MenuItem mnemonicParsing="false" onAction="#setMenuOption" text="Name" />
+               <MenuItem mnemonicParsing="false" onAction="#setMenuOption" text="Surname" />
+            </items>
+         </MenuButton>
+         <Button fx:id="logout_but" layoutX="41.0" layoutY="142.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="100.0" text="Logout" textFill="RED">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+         </Button>
+         <Label fx:id="welcome_msg" layoutX="41.0" layoutY="120.0" text="Welcome, &lt;username&gt;" />
+         <TextField fx:id="search_field" layoutX="302.0" layoutY="142.0" promptText="Search. . ." />
+         <TableView fx:id="user_table" layoutX="41.0" layoutY="219.0" prefHeight="275.0" prefWidth="913.0">
+            <columns>
+               <TableColumn fx:id="idCol" prefWidth="133.0" text="USERID" />
+               <TableColumn fx:id="nameCol" minWidth="0.0" prefWidth="390.0" text="Name" />
+               <TableColumn fx:id="surnameCol" prefWidth="390.0" text="Surname" />
+            </columns>
+         </TableView>
+
+         <TextField fx:id="userid_field" layoutX="44.0" layoutY="546.0" promptText="UserID..." />
+         <TextField fx:id="name_field" layoutX="254.0" layoutY="546.0" promptText="Name..." />
+         <TextField fx:id="surname_field" layoutX="474.0" layoutY="546.0" promptText="Surname..." />
+         <Button fx:id="add_but" layoutX="790.0" layoutY="548.0" mnemonicParsing="false" onAction="#addUser" text="Add New Customer" textFill="#004017">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+         </Button>
+         <Label disable="true" layoutX="44.0" layoutY="585.0" text="System output:" />
+         <TextArea fx:id="output_field" disable="true" layoutX="45.0" layoutY="612.0" prefHeight="47.0" prefWidth="596.0" />
+         <Button fx:id="next_but" layoutX="799.0" layoutY="188.0" mnemonicParsing="false" onAction="#nextPage" text="Next" />
+         <Button fx:id="previous_but" layoutX="716.0" layoutY="188.0" mnemonicParsing="false" onAction="#previousPage" text="Previous" />
+         <Label fx:id="page_count" disable="true" layoutX="861.0" layoutY="193.0" text="Page x of y" />
+         <Button fx:id="back" layoutX="41.0" layoutY="175.0" mnemonicParsing="false" onAction="#back" text="Back to Menu" />
+         <ImageView fitHeight="47.0" fitWidth="171.0" layoutX="459.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@logo.gif" />
+            </image>
+         </ImageView>
+         <Label layoutX="306.0" layoutY="120.0" text="Search by:">
+            <font>
+               <Font size="10.0" />
+            </font>
+         </Label>
+      </children>
+   </AnchorPane>
+</children>
+</VBox>

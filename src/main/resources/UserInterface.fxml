@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="671.0" prefWidth="776.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="537.0" prefWidth="721.0" style="-fx-background-color: #eeeeff;" VBox.vgrow="ALWAYS">
+      <children>
+            <Label fx:id="welcome_msg" layoutX="27.0" layoutY="74.0" text="Welcome &lt;username&gt;" />
+            <Button fx:id="logout_but" layoutX="27.0" layoutY="95.0" mnemonicParsing="false" onAction="#logout" text="Logout" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <TextField fx:id="search_field" layoutX="318.0" layoutY="178.0" prefHeight="26.0" prefWidth="204.0" promptText="Search..." />
+            <Button fx:id="search_but" layoutX="654.0" layoutY="156.0" mnemonicParsing="false" onAction="#search" text="Search">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="borrow_but" layoutX="614.0" layoutY="600.0" mnemonicParsing="false" onAction="#borrowSelected" text="Borrow selected">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <TextArea fx:id="output_field" disable="true" editable="false" layoutX="28.0" layoutY="584.0" prefHeight="54.0" prefWidth="455.0" />
+            <TableView fx:id="list_table" layoutX="25.0" layoutY="231.0" prefHeight="284.0" prefWidth="739.0">
+              <columns>
+                <TableColumn fx:id="idCol" prefWidth="83.0" text="ID" />
+                <TableColumn fx:id="titleCol" prefWidth="256.0" text="TITLE" />
+                  <TableColumn fx:id="authorCol" minWidth="0.0" prefWidth="254.0" text="AUTHOR" />
+                  <TableColumn fx:id="categoryCol" prefWidth="145.0" text="CATEGORY" />
+              </columns>
+            </TableView>
+            <MenuButton fx:id="search_filter" layoutX="535.0" layoutY="178.0" mnemonicParsing="false" text="Title">
+              <items>
+                <MenuItem fx:id="m1" mnemonicParsing="false" onAction="#setMenuOption" text="Title" />
+                <MenuItem fx:id="m2" mnemonicParsing="false" onAction="#setMenuOption" text="Author" />
+              </items>
+            </MenuButton>
+            <Button fx:id="next_but" layoutX="633.0" layoutY="541.0" mnemonicParsing="false" onAction="#nextPage" text="Next">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button fx:id="previous_but" layoutX="564.0" layoutY="541.0" mnemonicParsing="false" onAction="#previousPage" text="Previous">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Label fx:id="page_count" disable="true" layoutX="703.0" layoutY="544.0" />
+            <ImageView fitHeight="47.0" fitWidth="171.0" layoutX="318.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.gif" />
+               </image>
+            </ImageView>
+            <Label layoutX="535.0" layoutY="162.0" text="Search by:">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="337.0" layoutY="98.0" text="Catalogue">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="tableChanger_but" layoutX="24.0" layoutY="179.0" mnemonicParsing="false" onAction="#changeTable" text="View My Loans" />
+            <Button fx:id="available_check" layoutX="622.0" layoutY="194.0" mnemonicParsing="false" onAction="#filterAvailables" text="Only show Availables">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button fx:id="viewRequests_but" layoutX="151.0" layoutY="179.0" mnemonicParsing="false" onAction="#viewRequests" text="View My Requests" />
+            <Label disable="true" layoutX="27.0" layoutY="561.0" text="System output:" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
